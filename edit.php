@@ -4,9 +4,17 @@ include './config/koneksi.php';
 $id = $_GET['id'];
 $result = mysqli_query($conn, "SELECT * FROM content WHERE id_nota=$id");
 $data = mysqli_fetch_assoc($result);
+
+if (isset($_POST['update'])) {
+    $judul = $_POST['judul'];
+    $isi = $_POST['isi'];
+
+    mysqli_query($conn, "UPDATE content SET judul='$judul', isi='$isi' WHERE id_nota=$id");
+
+    header("Location: index.php");
+    exit;
+}
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,15 +43,3 @@ $data = mysqli_fetch_assoc($result);
 
 </body>
 </html>
-
-<?php
-if (isset($_POST['update'])) {
-    $judul = $_POST['judul'];
-    $isi = $_POST['isi'];
-
-    mysqli_query($conn, "UPDATE content SET judul='$judul', isi='$isi' WHERE id_nota=$id");
-
-    header("Location: index.php");
-    exit;
-}
-?>
