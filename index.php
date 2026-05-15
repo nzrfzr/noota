@@ -4,12 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 
   </head>
   <body class="bg-blue-200 mx-12 flex flex-col gap-4">
-    <header class="py-6 px-12 bg-blue-900 w-full rounded-b-lg">
-        <h1 class="text-4xl text-white font-bold">Noota</h1>
-        <p class="text-white text-sm">By nzrfzr</p>
+    <header class="flex justify-between py-6 px-12 bg-blue-900 w-full rounded-b-lg">
+        <div>
+            <h1 class="text-4xl text-white font-bold">Noota</h1>
+            <p class="text-white text-sm">By nzrfzr</p>
+        </div>
+        <div class="flex items-center">
+            <a href="note.php" class="text-white bg-blue-500 rounded px-6 py-2 hover:bg-blue-700 transition-all">Tambah</a>
+        </div>
     </header>
     <div class="grid grid-cols-3 gap-3">
       <?php
